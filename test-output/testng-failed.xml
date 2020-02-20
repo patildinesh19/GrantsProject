@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]">
+  <listeners>
+    <listener class-name="GlobalGrantScenario.Grants.Listeners"/>
+    <listener class-name="resources.ExtentReporterNG"/>
+  </listeners>
+  <test name="Test(failed)">
+    <classes>
+      <class name="GlobalGrantScenario.Grants.OpenGrantPage">
+        <methods>
+          <include name="openloginpage"/>
+        </methods>
+      </class> <!-- GlobalGrantScenario.Grants.OpenGrantPage -->
+      <class name="GlobalGrantScenario.Grants.grantsLoginPageTest">
+        <methods>
+          <include name="closedbrowser"/>
+        </methods>
+      </class> <!-- GlobalGrantScenario.Grants.grantsLoginPageTest -->
+      <class name="GlobalGrantScenario.Grants.ApplayForGrantTest">
+        <methods>
+          <include name="startglobalgrant"/>
+        </methods>
+      </class> <!-- GlobalGrantScenario.Grants.ApplayForGrantTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
