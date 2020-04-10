@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" total="5" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="57823" started-at="2020-02-20T12:48:37Z" finished-at="2020-02-20T12:49:35Z">
+  <suite name="Suite" duration-ms="55126" started-at="2020-03-05T10:47:14Z" finished-at="2020-03-05T10:48:09Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="57823" started-at="2020-02-20T12:48:37Z" finished-at="2020-02-20T12:49:35Z">
+    <test name="Test" duration-ms="55126" started-at="2020-03-05T10:47:14Z" finished-at="2020-03-05T10:48:09Z">
       <class name="GlobalGrantScenario.Grants.grantsLoginPageTest">
-        <test-method status="PASS" signature="loignintGrant(java.lang.String, java.lang.String)[pri:0, instance:GlobalGrantScenario.Grants.grantsLoginPageTest@2aceadd4]" name="loignintGrant" duration-ms="8241" started-at="2020-02-20T18:18:56Z" data-provider="getdata" finished-at="2020-02-20T18:19:04Z">
+        <test-method status="PASS" signature="loignintGrant(java.lang.String, java.lang.String)[pri:0, instance:GlobalGrantScenario.Grants.grantsLoginPageTest@7bedc48a]" name="loignintGrant" duration-ms="9009" started-at="2020-03-05T16:17:32Z" data-provider="getdata" finished-at="2020-03-05T16:17:41Z">
           <params>
             <param index="0">
               <value>
@@ -23,33 +23,33 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loignintGrant -->
-        <test-method status="PASS" signature="closedbrowser()[pri:0, instance:GlobalGrantScenario.Grants.grantsLoginPageTest@2aceadd4]" name="closedbrowser" is-config="true" duration-ms="7333" started-at="2020-02-20T18:19:27Z" finished-at="2020-02-20T18:19:35Z">
+        <test-method status="PASS" signature="closedbrowser()[pri:0, instance:GlobalGrantScenario.Grants.grantsLoginPageTest@7bedc48a]" name="closedbrowser" is-config="true" duration-ms="5527" started-at="2020-03-05T16:18:03Z" finished-at="2020-03-05T16:18:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closedbrowser -->
       </class> <!-- GlobalGrantScenario.Grants.grantsLoginPageTest -->
       <class name="GlobalGrantScenario.Grants.ApplayForGrantTest">
-        <test-method status="PASS" signature="checkpagetitle()[pri:0, instance:GlobalGrantScenario.Grants.ApplayForGrantTest@15de0b3c]" name="checkpagetitle" duration-ms="4278" started-at="2020-02-20T18:19:12Z" finished-at="2020-02-20T18:19:16Z">
+        <test-method status="PASS" signature="checkpagetitle()[pri:0, instance:GlobalGrantScenario.Grants.ApplayForGrantTest@279fedbd]" name="checkpagetitle" duration-ms="3736" started-at="2020-03-05T16:17:50Z" finished-at="2020-03-05T16:17:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkpagetitle -->
-        <test-method status="PASS" signature="startglobalgrant()[pri:0, instance:GlobalGrantScenario.Grants.ApplayForGrantTest@15de0b3c]" name="startglobalgrant" duration-ms="11247" started-at="2020-02-20T18:19:16Z" finished-at="2020-02-20T18:19:27Z">
+        <test-method status="PASS" signature="startglobalgrant()[pri:0, instance:GlobalGrantScenario.Grants.ApplayForGrantTest@279fedbd]" name="startglobalgrant" duration-ms="8904" started-at="2020-03-05T16:17:54Z" finished-at="2020-03-05T16:18:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startglobalgrant -->
       </class> <!-- GlobalGrantScenario.Grants.ApplayForGrantTest -->
       <class name="GlobalGrantScenario.Grants.OpenGrantPage">
-        <test-method status="PASS" signature="openloginpage()[pri:0, instance:GlobalGrantScenario.Grants.OpenGrantPage@ba2f4ec]" name="openloginpage" is-config="true" duration-ms="7946" started-at="2020-02-20T18:18:37Z" finished-at="2020-02-20T18:18:45Z">
+        <test-method status="PASS" signature="openloginpage()[pri:0, instance:GlobalGrantScenario.Grants.OpenGrantPage@d35dea7]" name="openloginpage" is-config="true" duration-ms="9107" started-at="2020-03-05T16:17:14Z" finished-at="2020-03-05T16:17:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openloginpage -->
-        <test-method status="PASS" signature="openurl()[pri:0, instance:GlobalGrantScenario.Grants.OpenGrantPage@ba2f4ec]" name="openurl" duration-ms="10878" started-at="2020-02-20T18:18:45Z" finished-at="2020-02-20T18:18:56Z">
+        <test-method status="PASS" signature="openurl()[pri:0, instance:GlobalGrantScenario.Grants.OpenGrantPage@d35dea7]" name="openurl" duration-ms="9147" started-at="2020-03-05T16:17:23Z" finished-at="2020-03-05T16:17:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openurl -->
       </class> <!-- GlobalGrantScenario.Grants.OpenGrantPage -->
       <class name="GlobalGrantScenario.Grants.GrantsHomePagetest">
-        <test-method status="PASS" signature="navigatetoNewGrantpage()[pri:0, instance:GlobalGrantScenario.Grants.GrantsHomePagetest@24269709]" name="navigatetoNewGrantpage" duration-ms="7880" started-at="2020-02-20T18:19:04Z" finished-at="2020-02-20T18:19:12Z">
+        <test-method status="PASS" signature="navigatetoNewGrantpage()[pri:0, instance:GlobalGrantScenario.Grants.GrantsHomePagetest@6c40365c]" name="navigatetoNewGrantpage" duration-ms="9680" started-at="2020-03-05T16:17:41Z" finished-at="2020-03-05T16:17:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigatetoNewGrantpage -->

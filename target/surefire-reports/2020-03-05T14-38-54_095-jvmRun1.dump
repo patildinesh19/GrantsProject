@@ -1,11 +1,11 @@
-# Created on 2020-02-20T18:11:00.321
+# Created on 2020-03-05T14:41:39.546
 org.openqa.selenium.WebDriverException: chrome not reachable
-  (Session info: chrome=80.0.3987.116)
+  (Session info: chrome=80.0.3987.122)
 Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
-System info: host: 'L10ASO-PF0WLE4Y', ip: '192.168.1.102', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_131'
+System info: host: 'L10ASO-PF0WLE4Y', ip: '192.168.178.68', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_131'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=80.0.3987.16 (320f6526c1632ad4f205ebce69b99a062ed78647-refs/branch-heads/3987@{#185}), userDataDir=C:\Users\patild\AppData\Local\Temp\scoped_dir17256_519069145}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:54178}, acceptInsecureCerts=false, browserVersion=80.0.3987.116, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true}]
-Session ID: 0ce9b92819d62dfcbc00cc3f40e6720c
+Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=80.0.3987.106 (f68069574609230cf9b635cd784cfb1bf81bb53a-refs/branch-heads/3987@{#882}), userDataDir=C:\Users\patild\AppData\Local\Temp\scoped_dir21572_1311549044}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:64803}, acceptInsecureCerts=false, browserVersion=80.0.3987.122, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true}]
+Session ID: 3b7a640429f4c5c988153a25e165cf93
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)

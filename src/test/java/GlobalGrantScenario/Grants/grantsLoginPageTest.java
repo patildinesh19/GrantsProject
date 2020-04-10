@@ -1,6 +1,7 @@
 package GlobalGrantScenario.Grants;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -11,7 +12,19 @@ import PageObjects.grantsLoginPageObjects;
 import resources.Base;
 
 public class grantsLoginPageTest extends Base
-{
+{	private String username;
+	private String password;
+	
+	
+	public grantsLoginPageTest() throws IOException
+	{
+ArrayList<String> testdata= readexceldata(System.getProperty("user.dir")+"\\src\\main\\java\\resources\\Grants_Input.xlsx","DG login details");
+		
+		this.username=testdata.get(0);
+		this.password=testdata.get(1);
+		
+	}
+	
 	@Test(dataProvider="getdata")
 	public void loignintGrant(String username1,String Password1) throws IOException, InterruptedException
 	{
@@ -42,6 +55,17 @@ public class grantsLoginPageTest extends Base
 		driver.close();
 		driver=null;
 	}
-	
+	/*
+	@Test
+	public void loginforDG() throws Exception, InterruptedException
+	{
+		grantsLoginPageObjects gl=new grantsLoginPageObjects(driver);
+		System.out.println(username);
+		System.out.println(password);
+		gl.enterusername().sendKeys(username);
+		gl.enterpassword().sendKeys(password);
+		fullscreenshotforpassmethod("loignintGrant");
+		gl.loginbutton().click();
+	}*/
 	
 }

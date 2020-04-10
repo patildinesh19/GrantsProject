@@ -14,7 +14,6 @@ public class GrantsHomePagetest extends Base
 	public void navigatetoNewGrantpage() throws IOException, InterruptedException 
 	{	
 		GrantsHomePAgeObjects gh=new GrantsHomePAgeObjects(driver);
-		
 		selectframe("app_win");
 		selectframe("page_win");
 		Assert.assertTrue(gh.clickonApplyforGrant().isDisplayed(), "Apply For Grant element found");

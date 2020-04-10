@@ -9,6 +9,7 @@ import java.util.Iterator;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -36,14 +37,15 @@ public class Base
 	//------------Browser Initialization for different browser -------------------------------- 
 	public static WebDriver intilizebrowser() throws IOException
 	{
-		
+	    
+
 		pr= new Properties ();
 		FileInputStream fp=new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\java\\resources\\globaldata.properties");
 		pr.load(fp);
 		String mavenbrowsername=System.getProperty("browser");
 		String browsername=pr.getProperty("browser");
 		
-		if(mavenbrowsername.contentEquals("Chrome"))
+		if(browsername.contentEquals("Chrome"))
 		{
 			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\chromedriver\\chromedriver.exe");
 			//System.getProperty("user.dir");
@@ -55,7 +57,7 @@ public class Base
 			}
 			driver=new ChromeDriver();
 		}
-		if(mavenbrowsername.contentEquals("FireFox"))
+		if(browsername.contentEquals("FireFox"))
 		{
 			System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")+"\\chromedriver\\geckodriver.exe");
 			
@@ -65,9 +67,9 @@ public class Base
 		
 		//----defined Implisit Wait Globally through Jenkins--------------
 		
-		String impisitwait = System.getProperty("Implicitwait");
-		int wait=Integer.parseInt(impisitwait);
-		driver.manage().timeouts().implicitlyWait(wait, TimeUnit.SECONDS);
+		/*String impisitwait = System.getProperty("Implicitwait");
+		int wait=Integer.parseInt(impisitwait); */
+		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
 		
 		return driver;
 		
@@ -98,12 +100,12 @@ public class Base
 		System.out.println(envirnomt);
 		String grantsenvirnomt=System.getProperty("Environemt");
 		
-		if(grantsenvirnomt.contentEquals("QAT"))
+		if(envirnomt.contentEquals("QAT"))
 		{
 		driver.get("https://grantsqat.rotary.org/s_Login.jsp");
 		}
 
-		if(grantsenvirnomt.contentEquals("UAT"))
+		if(envirnomt.contentEquals("UAT"))
 		{
 			driver.get("https://grantsuat.rotary.org/s_Login.jsp");
 		}
@@ -151,5 +153,9 @@ public class Base
 		return ap;
 		
 	}
-	
+	public static WebDriver savebutton()
+	{
+		driver.findElement(By.id("btnSaveContact"));
+		return driver;
+	}
 }

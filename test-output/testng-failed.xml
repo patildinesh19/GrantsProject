@@ -1,27 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]">
+<suite thread-count="2" name="Failed suite [Suite]" parallel="tests">
   <listeners>
     <listener class-name="GlobalGrantScenario.Grants.Listeners"/>
     <listener class-name="resources.ExtentReporterNG"/>
   </listeners>
-  <test name="Test(failed)">
+  <test name="Create_District_Grant(failed)" parallel="tests">
     <classes>
       <class name="GlobalGrantScenario.Grants.OpenGrantPage">
         <methods>
           <include name="openloginpage"/>
+          <include name="openloginpage"/>
+          <include name="openurl"/>
         </methods>
       </class> <!-- GlobalGrantScenario.Grants.OpenGrantPage -->
       <class name="GlobalGrantScenario.Grants.grantsLoginPageTest">
         <methods>
-          <include name="closedbrowser"/>
+          <include name="loignintGrant"/>
         </methods>
       </class> <!-- GlobalGrantScenario.Grants.grantsLoginPageTest -->
-      <class name="GlobalGrantScenario.Grants.ApplayForGrantTest">
+    </classes>
+  </test> <!-- Create_District_Grant(failed) -->
+  <test name="Test(failed)" parallel="tests">
+    <classes>
+      <class name="GlobalGrantScenario.Grants.OpenGrantPage">
         <methods>
-          <include name="startglobalgrant"/>
+          <include name="openloginpage"/>
+          <include name="openloginpage"/>
+          <include name="openurl"/>
         </methods>
-      </class> <!-- GlobalGrantScenario.Grants.ApplayForGrantTest -->
+      </class> <!-- GlobalGrantScenario.Grants.OpenGrantPage -->
+      <class name="GlobalGrantScenario.Grants.grantsLoginPageTest">
+        <methods>
+          <include name="loignintGrant"/>
+        </methods>
+      </class> <!-- GlobalGrantScenario.Grants.grantsLoginPageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

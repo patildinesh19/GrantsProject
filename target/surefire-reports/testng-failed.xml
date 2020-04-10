@@ -10,16 +10,23 @@
       <class name="GlobalGrantScenario.Grants.ApplayForGrantTest">
         <methods>
           <include name="startglobalgrant"/>
+          <include name="checkpagetitle"/>
         </methods>
       </class> <!-- GlobalGrantScenario.Grants.ApplayForGrantTest -->
+      <class name="GlobalGrantScenario.Grants.GrantsHomePagetest">
+        <methods>
+          <include name="navigatetoNewGrantpage"/>
+        </methods>
+      </class> <!-- GlobalGrantScenario.Grants.GrantsHomePagetest -->
       <class name="GlobalGrantScenario.Grants.OpenGrantPage">
         <methods>
           <include name="openloginpage"/>
+          <include name="openurl"/>
         </methods>
       </class> <!-- GlobalGrantScenario.Grants.OpenGrantPage -->
       <class name="GlobalGrantScenario.Grants.grantsLoginPageTest">
         <methods>
-          <include name="closedbrowser"/>
+          <include name="loignintGrant"/>
         </methods>
       </class> <!-- GlobalGrantScenario.Grants.grantsLoginPageTest -->
     </classes>

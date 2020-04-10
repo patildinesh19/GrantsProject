@@ -10,14 +10,20 @@
          
  </listeners>
  
-  <test name="Test">
+  <test name="Create_District_Grant">
     <classes>
       <class name="GlobalGrantScenario.Grants.AppTest"/>
     
       <class name="GlobalGrantScenario.Grants.OpenGrantPage"/>
       <class name="GlobalGrantScenario.Grants.grantsLoginPageTest"/>
+       <methods>
+     <exclude name ="loignintGrant"/>
+     </methods>
       <class name="GlobalGrantScenario.Grants.GrantsHomePagetest"/>
       <class name="GlobalGrantScenario.Grants.ApplayForGrantTest"/>
+       <methods>
+     <exclude name ="startglobalgrant"/>
+     </methods>
      
     </classes>
   </test> <!-- Test -->
