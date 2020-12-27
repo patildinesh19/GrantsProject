@@ -2,6 +2,12 @@ package GlobalGrantScenario.Grants;
 
 import java.io.IOException;
 
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -11,12 +17,14 @@ import resources.Base;
 import resources.ExtentReporterNG;
 
 public class OpenGrantPage extends Base
-{
+
+{	public WebDriver driver;
 	@BeforeTest
 	public void openloginpage() throws Exception 
 	{
 		
-		intilizebrowser();
+		driver=intilizebrowser();
+		
 		fullscreenshotforpassmethod("openloginpage");
 		
 		
@@ -28,7 +36,8 @@ public class OpenGrantPage extends Base
 		
 		opengranturl();
 		driver.manage().window().maximize();
-		fullscreenshotforpassmethod("openurl");
-		
+		fullscreenshotforpassmethod("openurl");		
 	}
-}
+	
+	}
+	

@@ -10,6 +10,7 @@ public class GrantsHomePAgeObjects
 	private WebDriver driver;
 	private WebDriverWait wt;
 	private By AplyforGrant= By.xpath("//a[contains(text(),'Apply for a Grant')]");
+	private By MyGrants=By.xpath("//a[contains(text(),'Apply for a Grant')]");
 	
 	public GrantsHomePAgeObjects(WebDriver driver)
 	{
@@ -20,6 +21,9 @@ public class GrantsHomePAgeObjects
 	{
 		return driver.findElement(AplyforGrant);
 	}
-	
+	public WebElement clickOnMyGrants()
+	{
+		return driver.findElement(MyGrants);
+	}
 	
 }

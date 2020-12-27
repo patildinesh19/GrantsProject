@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite" parallel="tests" thread-count="2">
+<suite name="Suite">
 
 <listeners>
      
@@ -10,37 +10,22 @@
          
  </listeners>
  
-  <test name="Test">
+  <test name="Create_Global_Grant">
     <classes>
       <class name="GlobalGrantScenario.Grants.AppTest"/>
     
       <class name="GlobalGrantScenario.Grants.OpenGrantPage"/>
-      
       <class name="GlobalGrantScenario.Grants.grantsLoginPageTest"/>
-      
-     <!--
+       <methods>
+     <exclude name ="loginforDG"/>
+     </methods>
       <class name="GlobalGrantScenario.Grants.GrantsHomePagetest"/>
       <class name="GlobalGrantScenario.Grants.ApplayForGrantTest"/>
        <methods>
      <exclude name ="startdistrictgrant"/>
      </methods>
-     -->
+     <class name="GlobalGrantScenario.Grants.Step1Basicinfo"/>     
     </classes>
   </test> <!-- Test -->
-   <test name="Create_District_Grant">
-    <classes>
-      <class name="GlobalGrantScenario.Grants.AppTest"/>
-    
-      <class name="GlobalGrantScenario.Grants.OpenGrantPage"/>
-     
-      <class name="GlobalGrantScenario.Grants.grantsLoginPageTest"/>
-       <!--
-      <class name="GlobalGrantScenario.Grants.GrantsHomePagetest"/>
-      <class name="GlobalGrantScenario.Grants.ApplayForGrantTest"/>
-       <methods>
-     <exclude name ="startglobalgrant"/>
-     </methods>
-     -->
-    </classes>
-  </test> <!-- Test -->
+   
 </suite> <!-- Suite -->

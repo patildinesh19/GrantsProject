@@ -22,28 +22,30 @@ import org.testng.asserts.SoftAssert;
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.util.NumberToTextConverter;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 
 public class Base
 {
-	public static WebDriver driver;
+	public  static WebDriver driver;
 	public static Properties pr; //we can use this object in other class also to get values from properties file
 	public static Properties pr1;
 	public static SoftAssert softassersion= new SoftAssert();;
 	
 	
 	//------------Browser Initialization for different browser -------------------------------- 
-	public static WebDriver intilizebrowser() throws IOException
-	{
-	    
-
-		pr= new Properties ();
+	public  static WebDriver intilizebrowser() throws IOException
+	{	//below scenario is singleton design pattern 
+		//where initializing webdriver only once
+		
+	    pr= new Properties ();
 		FileInputStream fp=new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\java\\resources\\globaldata.properties");
 		pr.load(fp);
 		String mavenbrowsername=System.getProperty("browser");
 		String browsername=pr.getProperty("browser");
+		
 		
 		if(browsername.contentEquals("Chrome"))
 		{
@@ -64,62 +66,65 @@ public class Base
 			driver =new FirefoxDriver();
 		}
 		
-		
+		 
 		//----defined Implisit Wait Globally through Jenkins--------------
 		
 		/*String impisitwait = System.getProperty("Implicitwait");
 		int wait=Integer.parseInt(impisitwait); */
 		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
-		
+	    
 		return driver;
 		
 		
 	}
 	
 	//----------Screenshot for Failed Scenarios ------------------
-	public void fullscreenshot(String result) throws IOException
+	public static void fullscreenshot(String result) throws IOException
 	{		
 		File fullscreenshot= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(fullscreenshot, new File(System.getProperty("user.dir")+"\\Fail_Test_screenshots"+"\\Test_screenshots_Fail"+result+"screenshot.png"));
 	}
 	//--------------Screenshot for PAss method  -----------------
-	public static void fullscreenshotforpassmethod(String methodname) throws IOException, InterruptedException
+	public  static void fullscreenshotforpassmethod(String methodname) throws IOException, InterruptedException
 	{	Thread.sleep(1000);
 		File fullscreenshot= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(fullscreenshot, new File(System.getProperty("user.dir")+"\\Pass_Test_screenshots"+"\\Test_screenshots_Pass"+methodname+"screenshot.png"));
 	}
 	
 		
-	public static WebDriver opengranturl() throws IOException
+	public  static WebDriver opengranturl() throws IOException
 	{
 		
 		pr1= new Properties ();
 		FileInputStream fp=new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\java\\resources\\globaldata.properties");
 		pr1.load(fp);
-		String envirnomt=pr.getProperty("GrantsEnvronment");
+		StringBuilder envirnomt= new StringBuilder(pr.getProperty("GrantsEnvronment"));
+		//String envirnomt=pr.getProperty("GrantsEnvronment");
 		System.out.println(envirnomt);
 		String grantsenvirnomt=System.getProperty("Environemt");
 		
-		if(envirnomt.contentEquals("QAT"))
+		if(envirnomt.toString().equals("QAT"))
 		{
 		driver.get("https://grantsqat.rotary.org/s_Login.jsp");
 		}
 
-		if(envirnomt.contentEquals("UAT"))
+		if(envirnomt.toString().equals("UAT"))
 		{
+			System.out.println("started url");
 			driver.get("https://grantsuat.rotary.org/s_Login.jsp");
+			System.out.println("completed url");
 		}
 		return driver;
 				
 	}
 	
 	
-	public static WebDriver selectframe(String framename)
+	public  static WebDriver selectframe(String framename)
 	{
 		driver.switchTo().frame(framename);
 		return driver;
 	}
-	public static void selectdropdownvaluebyname(WebElement selectfild, String selectvalue)
+	public  static void selectdropdownvaluebyname(WebElement selectfild, String selectvalue)
 	{
 		Select sc= new Select(selectfild);
 		sc.selectByVisibleText(selectvalue);
@@ -127,7 +132,7 @@ public class Base
 	}
 	
 	//---------------Data Driven Testing fatch values from excel sheet------------------
-	public static ArrayList<String> readexceldata(String filepath, String Sheetname) throws IOException
+	public  static ArrayList<String> readexceldata(String filepath, String Sheetname) throws IOException
 	{
 		//XSSFSheet sheet;
 		ArrayList<String> ap=new ArrayList<String> ();
@@ -144,6 +149,11 @@ public class Base
 			while(celliterator.hasNext())
 			{
 				Cell cell=celliterator.next();
+				/*if(cell.getCellType() == Cell.CELL_TYPE_NUMERIC)
+				{
+					String numericstr = NumberToTextConverter.toText(cell.getNumericCellValue());
+					ap.add(numericstr);
+				}*/
 				ap.add(cell.getStringCellValue());
 				
 			}
@@ -153,7 +163,7 @@ public class Base
 		return ap;
 		
 	}
-	public static WebDriver savebutton()
+	public  static WebDriver savebutton()
 	{
 		driver.findElement(By.id("btnSaveContact"));
 		return driver;

@@ -5,36 +5,40 @@
     <listener class-name="GlobalGrantScenario.Grants.Listeners"/>
     <listener class-name="resources.ExtentReporterNG"/>
   </listeners>
-  <test name="Create_District_Grant(failed)" parallel="tests">
+  <test name="Test_GlobalGrant(failed)" parallel="tests">
     <classes>
       <class name="GlobalGrantScenario.Grants.OpenGrantPage">
         <methods>
           <include name="openloginpage"/>
           <include name="openloginpage"/>
-          <include name="openurl"/>
         </methods>
       </class> <!-- GlobalGrantScenario.Grants.OpenGrantPage -->
       <class name="GlobalGrantScenario.Grants.grantsLoginPageTest">
         <methods>
-          <include name="loignintGrant"/>
+          <include name="loginforDG"/>
+          <include name="closedbrowser"/>
+          <include name="closedbrowser"/>
+          <include name="loignintGrant" invocation-numbers="0"/>
         </methods>
       </class> <!-- GlobalGrantScenario.Grants.grantsLoginPageTest -->
     </classes>
-  </test> <!-- Create_District_Grant(failed) -->
-  <test name="Test(failed)" parallel="tests">
+  </test> <!-- Test_GlobalGrant(failed) -->
+  <test name="Test_DistrictGrant(failed)" parallel="tests">
     <classes>
       <class name="GlobalGrantScenario.Grants.OpenGrantPage">
         <methods>
           <include name="openloginpage"/>
           <include name="openloginpage"/>
-          <include name="openurl"/>
         </methods>
       </class> <!-- GlobalGrantScenario.Grants.OpenGrantPage -->
       <class name="GlobalGrantScenario.Grants.grantsLoginPageTest">
         <methods>
-          <include name="loignintGrant"/>
+          <include name="loginforDG"/>
+          <include name="closedbrowser"/>
+          <include name="closedbrowser"/>
+          <include name="loignintGrant" invocation-numbers="0"/>
         </methods>
       </class> <!-- GlobalGrantScenario.Grants.grantsLoginPageTest -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Test_DistrictGrant(failed) -->
 </suite> <!-- Failed suite [Suite] -->

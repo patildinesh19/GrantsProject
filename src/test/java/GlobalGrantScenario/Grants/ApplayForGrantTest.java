@@ -83,9 +83,12 @@ public class ApplayForGrantTest extends Base
 		
 		driver.switchTo().defaultContent();
 		selectframe("app_win");
-		selectframe("page_win");		
+		selectframe("page_win");	
+		System.out.println("Verify lets beging button");
 		Assert.assertTrue(ap.letsBeginbutton().isEnabled(), "Let's Begin Button is enalbe");	
+		System.out.println("Verifyed lets beging button");
 		//softassersion.assertFalse(ap.letsBeginbutton().isEnabled(), "Let's Begin Button is enalbe");
+		System.out.println("District grant nsame:"+districtgrantype);
 		WebElement dropdown= ap.selectgrantType();		
 		selectdropdownvaluebyname(dropdown,districtgrantype);	
 		Thread.sleep(100);

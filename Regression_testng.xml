@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite" parallel="tests" thread-count="2">
+<suite name="Suite"  parallel="tests" thread-count="2">
 
 <listeners>
      
@@ -8,25 +8,32 @@
          <listener class-name="GlobalGrantScenario.Grants.Listeners"/>
          <listener class-name="resources.ExtentReporterNG"/>
          
- </listeners>
- 
-  <test name="Test">
+ </listeners> 
+   
+   <test name="Test_GlobalGrant">
     <classes>
       <class name="GlobalGrantScenario.Grants.AppTest"/>
     
       <class name="GlobalGrantScenario.Grants.OpenGrantPage"/>
-     
-      <class name="GlobalGrantScenario.Grants.grantsLoginPageTest"/>
-       <methods>
-     <exclude name ="loginforDG"/>
-     </methods>     
-      
-      <class name="GlobalGrantScenario.Grants.GrantsHomePagetest"/>
-      <class name="GlobalGrantScenario.Grants.ApplayForGrantTest"/>
-       <methods>
-     <exclude name ="startdistrictgrant"/>
-     </methods>
     
+           
     </classes>
-  </test> <!-- Test -->
+    </test>
+    
+    <test name="Test_DistrictGrant">
+    <classes>
+      <class name="GlobalGrantScenario.Grants.AppTest"/>
+    
+      <class name="GlobalGrantScenario.Grants.OpenGrantPage"/>
+    
+       
+     
+     </classes>
+   
+  </test> 
+    
+  <!-- Test -->
+  
+   
+ 
    </suite> <!-- Suite -->

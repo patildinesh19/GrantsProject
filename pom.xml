@@ -39,10 +39,8 @@
 </plugins>
     
   </build>  
+  </profile>
   
- 
- 
- </profile>
  <profile>
  <id>Smoke</id>
   <build>
@@ -127,6 +125,6 @@
     <artifactId>poi</artifactId>
     <version>3.17</version>
 </dependency>
-  
+   
   </dependencies>
 </project>
